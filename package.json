@@ -1,28 +1,48 @@
 {
-  "name": "express-react-starter",
+  "name": "commerce",
   "version": "0.1.0",
   "private": true,
+  "author": "Aakash Hemadri <aakashhemadri123@gmail.com>, Sujai Ram Prasath <sujairamprasathc@gmail.com>, Nithin R <37147336+thebinarybot@users.noreply.github.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:aakashhemadri/commerce.git"
+  },
+  "homepage": "https://aakashhemadri.com/commerce",
   "dependencies": {
-    "body-parser": "^1.17.2",
-    "cookie-parser": "^1.4.3",
-    "debug": "~2.6.3",
-    "express": "^4.15.3",
-    "jade": "^1.11.0",
-    "morgan": "^1.8.2",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "debug": "~4.3.1",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "pug": "^3.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "concurrently": "^3.5.0",
-    "nodemon": "^1.12.0",
-    "react-scripts": "1.0.10"
+    "concurrently": "^6.0.0",
+    "nodemon": "^2.0.7",
+    "react-scripts": "4.0.3"
   },
   "scripts": {
-    "start":
-      "concurrently \"react-scripts start\" \"nodemon server/server.js\"",
+    "start": "concurrently \"react-scripts start\" \"nodemon server/server.js\"",
+    "prebuild": "rm -rf server/build",
     "build": "react-scripts build && mv build server",
     "test": "react-scripts test --env=jsdom",
+    "clean": "rm -rf server/build",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:3001"
+  "proxy": "http://localhost:3001",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
