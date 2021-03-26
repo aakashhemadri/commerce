@@ -25,7 +25,7 @@ router.post('/product', async (req, res) => {
     const product = new productModel(req.body);
     try {
         await product.save();
-        res.status(200).send(product);
+        res.status(200).send('Success');
     } catch (error) {
         res.status(500).send(error);
     }
@@ -35,7 +35,7 @@ router.patch("/product/:id", async (req, res) => {
     try {
         await productModel.findByIdAndUpdate(req.params.id, req.body);
         await productModel.save();
-        res.status(200).send(product);
+        res.status(200).send("Success");
     } catch (error) {
         res.status(500).send(error);
     }
@@ -46,7 +46,7 @@ router.delete("/product/:id", async (req, res) => {
         const product = await productModel.findByIdAndDelete(req.params.id);
 
         if (!product) res.status(404).send("No item found");
-        res.status(200).send();
+        res.status(200).send("Success");
     } catch (error) {
         res.status(500).send(error);
     }
