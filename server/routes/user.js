@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
-const productModel = require('../models/product');
+const userModel = require('../models/user');
 
 router.get('/list', async (req, res) => {
-    const products = await productModel.find({});
+    const users = await userModel.find({});
 
     try {
-        res.status(200).send(products);
+        res.status(200).send(users);
     } catch (error) {
         res.status(500).send(error);
     }
@@ -14,17 +14,17 @@ router.get('/list', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     try {
-        const product = await productModel.findById(req.params.id, req.body);
-        res.status(200).send(product);
+        const user = await userModel.findById(req.params.id, req.body);
+        res.status(200).send(user);
     } catch (error) {
         res.status(500).send(error);
     }
 });
 
-router.post('/product', async (req, res) => {
-    const product = new productModel(req.body);
+router.post('/user', async (req, res) => {
+    const user = new userModel(req.body);
     try {
-        await product.save();
+        await user.save();
         res.status(200).send('Success');
     } catch (error) {
         res.status(500).send(error);
@@ -33,8 +33,8 @@ router.post('/product', async (req, res) => {
 
 router.patch("/:id", async (req, res) => {
     try {
-        await productModel.findByIdAndUpdate(req.params.id, req.body);
-        await productModel.save();
+        await userModel.findByIdAndUpdate(req.params.id, req.body);
+        await userModel.save();
         res.status(200).send("Success");
     } catch (error) {
         res.status(500).send(error);
@@ -43,9 +43,9 @@ router.patch("/:id", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
     try {
-        const product = await productModel.findByIdAndDelete(req.params.id);
+        const user = await userModel.findByIdAndDelete(req.params.id);
 
-        if (!product) res.status(404).send("No item found");
+        if (!user) res.status(404).send("No item found");
         res.status(200).send("Success");
     } catch (error) {
         res.status(500).send(error);

@@ -7,6 +7,10 @@ const mongoose = require('mongoose');
 
 const index = require('./routes/index');
 const productRoutes = require('./routes/product')
+const sellerRoutes = require('./routes/seller')
+const offerRoutes = require('./routes/offer')
+const reviewRoutes = require('./routes/review')
+const userRoutes = require('./routes/user')
 
 const app = express();
 
@@ -33,7 +37,11 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use('/api', index);
-app.use('/api', productRoutes);
+app.use('/api/product', productRoutes);
+app.use('/api/offer', offerRoutes);
+app.use('/api/review', reviewRoutes);
+app.use('/api/seller', sellerRoutes);
+app.use('/api/user', userRoutes);
 
 app.get('*', (req, res) => {
   res.sendFile('build/index.html', { root: global });

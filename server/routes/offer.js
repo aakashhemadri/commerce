@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
-const productModel = require('../models/product');
+const offerModel = require('../models/offer');
 
 router.get('/list', async (req, res) => {
-    const products = await productModel.find({});
+    const offers = await offerModel.find({});
 
     try {
-        res.status(200).send(products);
+        res.status(200).send(offers);
     } catch (error) {
         res.status(500).send(error);
     }
@@ -14,17 +14,17 @@ router.get('/list', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     try {
-        const product = await productModel.findById(req.params.id, req.body);
-        res.status(200).send(product);
+        const offer = await offerModel.findById(req.params.id, req.body);
+        res.status(200).send(offer);
     } catch (error) {
         res.status(500).send(error);
     }
 });
 
-router.post('/product', async (req, res) => {
-    const product = new productModel(req.body);
+router.post('/offer', async (req, res) => {
+    const offer = new offerModel(req.body);
     try {
-        await product.save();
+        await offer.save();
         res.status(200).send('Success');
     } catch (error) {
         res.status(500).send(error);
@@ -33,8 +33,8 @@ router.post('/product', async (req, res) => {
 
 router.patch("/:id", async (req, res) => {
     try {
-        await productModel.findByIdAndUpdate(req.params.id, req.body);
-        await productModel.save();
+        await offerModel.findByIdAndUpdate(req.params.id, req.body);
+        await offerModel.save();
         res.status(200).send("Success");
     } catch (error) {
         res.status(500).send(error);
@@ -43,9 +43,9 @@ router.patch("/:id", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
     try {
-        const product = await productModel.findByIdAndDelete(req.params.id);
+        const offer = await offerModel.findByIdAndDelete(req.params.id);
 
-        if (!product) res.status(404).send("No item found");
+        if (!offer) res.status(404).send("No item found");
         res.status(200).send("Success");
     } catch (error) {
         res.status(500).send(error);
