@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from './NavBar.js';
 
-class ProductsListPage extends React.Component {
+class ProductPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,3 +23,5 @@ class ProductsListPage extends React.Component {
     );
   }
 }
+
+export default ProductPage;

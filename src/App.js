@@ -8,6 +8,7 @@ import {
     Link
 } from "react-router-dom";
 
+import ProductPage from './components/ProductPage.js';
 import ProductsListPage from './components/ProductsListPage.js';
 
 class App extends Component {
@@ -34,12 +35,6 @@ class App extends Component {
       </Router>
     );
   }
-}
-
-function ProductPage() {
-  return (
-    <p>product page</p>
-  );
 }
 
 export default App;
