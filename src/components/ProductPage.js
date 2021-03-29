@@ -3,8 +3,6 @@ import NavBar from './NavBar.js';
 import { Row, Col } from 'reactstrap';
 import ProductCard from './ProductCard.js';
 
-
-
 class ProductPage extends React.Component {
   constructor(props) {
     super(props);

@@ -8,6 +8,7 @@ import {
     Link
 } from "react-router-dom";
 
+import ProductPage from './components/ProductPage.js';
 import ProductsListPage from './components/ProductsListPage.js';
 import ProductPage from './components/ProductPage.js';
 
@@ -21,10 +22,10 @@ class App extends Component {
       <Router>
         <div>
           <Switch>
-            <Route path="/product-list">
+            <Route path="/product-list" component={ProductsListPage}>
               <ProductsListPage />
             </Route>
-            <Route path="/product">
+            <Route path="/product" component={ProductPage}>
               <ProductPage />
             </Route>
             <Route path="/">
@@ -36,13 +37,5 @@ class App extends Component {
     );
   }
 }
-
-/*function ProductPage() {
-  return (
-    <p>product page</p>
-  );
-}*/
-
-
 
 export default App;
