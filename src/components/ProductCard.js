@@ -8,7 +8,7 @@ import {
 const ProductCard = (props) => {
   return (
     <Card>
-      <a href={"/product/" + props.id}>
+      <a href={"/product?id=" + props.id}>
 				<CardImg top width="100%" src={props.imageUrl} alt="Product Image" />
       </a>
       <CardBody>
