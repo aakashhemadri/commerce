@@ -10,6 +10,7 @@ import {
 
 import ProductPage from './components/ProductPage.js';
 import ProductsListPage from './components/ProductsListPage.js';
+import ProductPage from './components/ProductPage.js';
 
 class App extends Component {
   constructor() {
