@@ -21,10 +21,10 @@ class App extends Component {
       <Router>
         <div>
           <Switch>
-            <Route path="/product-list">
+            <Route path="/product-list" component={ProductsListPage}>
               <ProductsListPage />
             </Route>
-            <Route path="/product">
+            <Route path="/product" component={ProductPage}>
               <ProductPage />
             </Route>
             <Route path="/">
