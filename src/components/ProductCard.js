@@ -7,19 +7,19 @@ import {
 
 const ProductCard = (props) => {
   return (
-    <div>
-      <Card>
-				<CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
-        <CardBody>
-          <CardTitle tag="h5">Dell Laptop</CardTitle>
-          <CardSubtitle tag="h6" className="mb-2 text-muted">999.49$</CardSubtitle>
-          <CardText>
-						Dell 16 inch laptop with core i5 and 8GB RAM
-					</CardText>
-          <Button>Buy</Button>
-        </CardBody>
-      </Card>
-    </div>
+    <Card>
+      <a href={"/product/" + props.id}>
+				<CardImg top width="100%" src={props.imageUrl} alt="Product Image" />
+      </a>
+      <CardBody>
+        <a href={"/product/" + props.id}>
+          <CardTitle tag="h5">{props.name}</CardTitle>
+        </a>
+        <CardSubtitle tag="h6" className="mb-2 text-muted">{"$" + props.price}</CardSubtitle>
+        <CardText>{props.description}</CardText>
+        <Button>Add to Cart</Button>
+      </CardBody>
+    </Card>
   );
 };
 
