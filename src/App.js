@@ -22,11 +22,7 @@ class App extends Component {
         <div>
           <Switch>
             <Route path="/product-list" component={ProductsListPage}>
-              <ProductsListPage />
-            </Route>
             <Route path="/product" component={ProductPage}>
-              <ProductPage />
-            </Route>
             <Route path="/">
               <ProductsListPage />
             </Route>
