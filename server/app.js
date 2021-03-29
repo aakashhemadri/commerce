@@ -23,8 +23,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'build')));
 
 mongoose.connect(
-    "mongodb+srv://" + process.env.MONGO_USER + ":" + process.env.MONGO_PASSWD +"@cluster0.r0co7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-    // "mongodb+srv://admin:testpassword@cluster0.r0co7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    // "mongodb+srv://" + process.env.MONGO_USER + ":" + process.env.MONGO_PASSWD +"@cluster0.r0co7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+     "mongodb+srv://admin:testpassword@cluster0.r0co7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
       useFindAndModify: false,

@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col } from 'reactstrap';
 
 import NavBar from './NavBar.js';
-import ProductCard from './ProductCard.js';
+  import ProductCard from './ProductCard.js';
 
 class ProductsListPage extends React.Component {
   constructor(props) {

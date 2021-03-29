@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 
 import ProductsListPage from './components/ProductsListPage.js';
+import ProductPage from './components/ProductPage.js';
 
 class App extends Component {
   constructor() {
@@ -36,10 +37,12 @@ class App extends Component {
   }
 }
 
-function ProductPage() {
+/*function ProductPage() {
   return (
     <p>product page</p>
   );
-}
+}*/
+
+
 
 export default App;
