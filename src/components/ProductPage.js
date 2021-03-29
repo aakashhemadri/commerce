@@ -3,6 +3,7 @@ import NavBar from './NavBar.js';
 import { Row, Col } from 'reactstrap';
 import ProductCard from './ProductCard.js';
 
+
 class ProductPage extends React.Component {
   constructor(props) {
     super(props);
@@ -18,7 +19,7 @@ class ProductPage extends React.Component {
 
   componentDidMount() {
     const queryString = require('query-string');
-    let params = queryString.parse(this.props.location.search)
+    let params = queryString.parse(this.props.location.search);
     fetch('/api/product/' + params["id"])
       .then(response => response.json())
       .then(json => this.setState({ data: json }));
@@ -29,10 +30,10 @@ class ProductPage extends React.Component {
     return (
         <div>
         <NavBar />
+
+        <img src = {this.state.data["imageURL"] }>
         
-        <div>
-          {this.state.data["imageURL"]}
-        </div>
+        </img>
         
         <div>
           Product Description :

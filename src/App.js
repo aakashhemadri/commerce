@@ -10,7 +10,6 @@ import {
 
 import ProductPage from './components/ProductPage.js';
 import ProductsListPage from './components/ProductsListPage.js';
-import ProductPage from './components/ProductPage.js';
 
 class App extends Component {
   constructor() {
@@ -25,9 +24,7 @@ class App extends Component {
             <Route path="/product-list" component={ProductsListPage}>
               <ProductsListPage />
             </Route>
-            <Route path="/product" component={ProductPage}>
-              <ProductPage />
-            </Route>
+            <Route path="/product" component={ProductPage} />
             <Route path="/">
               <ProductsListPage />
             </Route>
