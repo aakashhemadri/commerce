@@ -21,7 +21,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.post('/seller', async (req, res) => {
+router.post('/', async (req, res) => {
     const seller = new sellerModel(req.body);
     try {
         await seller.save();

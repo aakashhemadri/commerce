@@ -21,7 +21,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.post('/user', async (req, res) => {
+router.post('/', async (req, res) => {
     const user = new userModel(req.body);
     try {
         await user.save();

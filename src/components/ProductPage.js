@@ -1,57 +1,34 @@
 import React from 'react';
 import NavBar from './NavBar.js';
-import { Row, Col } from 'reactstrap';
-import ProductCard from './ProductCard.js';
-
 
 class ProductPage extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      data: [{
-        "name": "Loading",
-        "price": "Loading",
-        "description": "Loading",
-        "imageURL": "Loading"
-      }],
+      item: this.props.location.state
     }
   }
 
-  componentDidMount() {
-    const queryString = require('query-string');
-    let params = queryString.parse(this.props.location.search);
-    fetch('/api/product/' + params["id"])
-      .then(response => response.json())
-      .then(json => this.setState({ data: json }));
-  }
-
   render() {
-
     return (
-        <div>
+      <div>
         <NavBar />
-
-        <img src = {this.state.data["imageURL"] }>
-        
-        </img>
-        
+        <img src={this.state.item.imageURL} />
         <div>
           Product Description :
-          <div>
-            {this.state.data["description"]}
-          </div>
+            {this.state.item.description}
         </div>
 
-        <div>    
+        <div>
           Product Details :
           <div>
-            Name : {this.state.data["name"]}
+            Name : {this.state.item.name}
           </div>
           <div>
-            Price : {this.state.data["price"]}
+            Price : {this.state.item.price}
           </div>
         </div>
-
       </div>
     );
   }

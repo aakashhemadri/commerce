@@ -5,11 +5,11 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
 } from "react-router-dom";
 
+import CartPage from './components/CartPage.js';
 import ProductPage from './components/ProductPage.js';
-import ProductsListPage from './components/ProductsListPage.js';
+import HomePage from './components/HomePage.js';
 import LoginPage from './components/LoginPage';
 // import FacebookLoginWithButton from 'react-facebook-login';
 
@@ -30,16 +30,12 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
-          <Switch>
-            <Route path="/product-list" component={ProductsListPage} />
-            <Route path="/product" component={ProductPage} />
-            <Route path="/login" component={LoginPage} />
-            <Route path="/">
-              <ProductsListPage />
-            </Route>
-          </Switch>
-        </div>
+        <Switch>
+          <Route path="/commerce/product-list" component={(props) => <HomePage {...props}/>} />
+          <Route path="/commerce/product" component={(props) => <ProductPage {...props}/>} />
+          <Route path="/commerce/cart" component={(props) => <CartPage {...props}/>} />
+          <Route component={(props) => <HomePage {...props}/>} />
+        </Switch>
       </Router>
 
     );
