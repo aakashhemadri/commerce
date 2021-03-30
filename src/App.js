@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-} from "react-router-dom";
-
-import CartPage from './components/CartPage.js';
-import ProductPage from './components/ProductPage.js';
-import HomePage from './components/HomePage.js';
+import { Spinner } from 'reactstrap';
+const loading = () => <Spinner color="secondary" />;
+const DefaultLayout = React.lazy(() => import('./containers/DefaultLayout.js'));
 
 class App extends Component {
   constructor() {
@@ -18,14 +12,9 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        <Switch>
-          <Route path="/commerce/product-list" component={(props) => <HomePage {...props}/>} />
-          <Route path="/commerce/product" component={(props) => <ProductPage {...props}/>} />
-          <Route path="/commerce/cart" component={(props) => <CartPage {...props}/>} />
-          <Route component={(props) => <HomePage {...props}/>} />
-        </Switch>
-      </Router>
+      <React.Suspense fallback={loading()}>
+        <DefaultLayout />
+      </React.Suspense>
     );
   }
 }

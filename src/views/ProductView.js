@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from './NavBar.js';
+import NavBar from '../containers/DefaultNavbar.js';
 
 class ProductPage extends React.Component {
   constructor(props) {
@@ -13,7 +13,6 @@ class ProductPage extends React.Component {
   render() {
     return (
       <div>
-        <NavBar />
         <img src={this.state.item.imageURL} />
         <div>
           Product Description :

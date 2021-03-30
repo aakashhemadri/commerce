@@ -3,8 +3,7 @@ import {
   Row,
 } from 'reactstrap';
 
-import NavBar from './NavBar.js';
-import ProductCard from './ProductCard.js';
+import ProductCard from '../components/ProductCard.js';
 import axios from 'axios';
 
 class HomePage extends React.Component {
@@ -42,7 +41,6 @@ class HomePage extends React.Component {
     return (
       <React.Fragment>
         <div className="App" >
-          <NavBar />
           <Row sm="4">
             {this.productCards(this.state.productList)}
           </Row>
