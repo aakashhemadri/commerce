@@ -10,6 +10,17 @@ import {
 
 import ProductPage from './components/ProductPage.js';
 import ProductsListPage from './components/ProductsListPage.js';
+import LoginPage from './components/LoginPage';
+// import FacebookLoginWithButton from 'react-facebook-login';
+
+// Facebook Sign-in
+const responseFacebook = (response) => {
+  console.log(response);
+}
+
+const componentClicked = () => {
+  console.log( "Clicked!" )
+}
 
 class App extends Component {
   constructor() {
@@ -23,12 +34,14 @@ class App extends Component {
           <Switch>
             <Route path="/product-list" component={ProductsListPage} />
             <Route path="/product" component={ProductPage} />
+            <Route path="/login" component={LoginPage} />
             <Route path="/">
               <ProductsListPage />
             </Route>
           </Switch>
         </div>
       </Router>
+
     );
   }
 }
