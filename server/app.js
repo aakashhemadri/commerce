@@ -11,6 +11,7 @@ const sellerRoutes = require('./routes/seller')
 const offerRoutes = require('./routes/offer')
 const reviewRoutes = require('./routes/review')
 const userRoutes = require('./routes/user')
+const cartRoutes = require('./routes/cart')
 
 const app = express();
 
@@ -24,7 +25,6 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 mongoose.connect(
     "mongodb+srv://" + process.env.MONGO_USER + ":" + process.env.MONGO_PASSWD +"@cluster0.r0co7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-    // "mongodb+srv://admin:testpassword@cluster0.r0co7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
       useFindAndModify: false,
@@ -42,6 +42,7 @@ app.use('/api/offer', offerRoutes);
 app.use('/api/review', reviewRoutes);
 app.use('/api/seller', sellerRoutes);
 app.use('/api/user', userRoutes);
+app.use('/api/cart', cartRoutes);
 
 app.get('*', (req, res) => {
   res.sendFile('build/index.html', { root: global });
