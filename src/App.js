@@ -1,36 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import NavBar from './components/NavBar.js';
-import ProductCard from './components/ProductCard.js';
-import { Row, Col } from 'reactstrap';
+
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+
+import ProductPage from './components/ProductPage.js';
+import ProductsListPage from './components/ProductsListPage.js';
 
 class App extends Component {
   constructor() {
     super();
-    this.state = { message: '' };
-  }
-
-  componentDidMount() {
-    fetch('/api/message')
-      .then(response => response.json())
-      .then(json => this.setState({ message: json }));
   }
 
   render() {
     return (
-      <div className="App">
-			  <NavBar />
-				<div>
-					<Row>
-						<ProductCard />
-						<ProductCard />
-						<ProductCard />
-						<ProductCard />
-						<ProductCard />
-					</Row>
-				</div>
-      </div>
+      <Router>
+        <div>
+          <Switch>
+            <Route path="/product-list" component={ProductsListPage} />
+            <Route path="/product" component={ProductPage} />
+            <Route path="/">
+              <ProductsListPage />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
