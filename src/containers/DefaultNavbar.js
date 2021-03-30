@@ -29,25 +29,11 @@ const NavBar = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/account">Account</NavLink>
+              <NavLink href="/commerce/account">Account</NavLink>
             </NavItem>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Cart
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  Product 1
-                </DropdownItem>
-                <DropdownItem>
-                  Product 2
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
-                  Clear Cart
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
+            <NavItem>
+              <NavLink href="/commerce/cart">Cart</NavLink>
+            </NavItem>
           </Nav>
           <NavbarText>Username</NavbarText>
         </Collapse>
