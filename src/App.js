@@ -8,6 +8,7 @@ import {
     Link
 } from "react-router-dom";
 
+import CartPage from './components/CartPage.js';
 import ProductPage from './components/ProductPage.js';
 import ProductsListPage from './components/ProductsListPage.js';
 
@@ -19,15 +20,12 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
-          <Switch>
-            <Route path="/product-list" component={ProductsListPage} />
-            <Route path="/product" component={ProductPage} />
-            <Route path="/">
-              <ProductsListPage />
-            </Route>
-          </Switch>
-        </div>
+        <Switch>
+          <Route path="/product-list" component={ProductsListPage} />
+          <Route path="/product" component={ProductPage} />
+          <Route path="/cart" component={CartPage} />
+          <Route component={ProductsListPage} />
+        </Switch>
       </Router>
     );
   }
