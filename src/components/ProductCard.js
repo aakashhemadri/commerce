@@ -5,21 +5,25 @@ import {
   CardTitle, CardSubtitle, Button
 } from 'reactstrap';
 
+import {
+  Link,
+} from "react-router-dom";
+
 const ProductCard = (props) => {
   return (
-    <Card>
-      <a href={"/product?id=" + props.id}>
-				<CardImg top width="100%" src={props.imageUrl} alt="Product Image" />
-      </a>
-      <CardBody>
-        <a href={"/product?id=" + props.id}>
-          <CardTitle tag="h5">{props.name}</CardTitle>
-        </a>
-        <CardSubtitle tag="h6" className="mb-2 text-muted">{"$" + props.price}</CardSubtitle>
-        <CardText>{props.description}</CardText>
-        <Button>Add to Cart</Button>
-      </CardBody>
-    </Card>
+    <Link to={{
+      pathname: "/commerce/product",
+      state: props.item,
+    }}>
+      <Card>
+        <CardImg top width="100%" src={props.item.imageURL} alt="Product Image" />
+        <CardBody>
+          <CardTitle tag="h5">{props.item.name}</CardTitle>
+          <CardSubtitle tag="h6" className="mb-2 text-muted">{"$" + props.item.price}</CardSubtitle>
+          <Button>Add to Cart</Button>
+        </CardBody>
+      </Card>
+    </Link>
   );
 };
 
