@@ -21,7 +21,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.post('/offer', async (req, res) => {
+router.post('/', async (req, res) => {
     const offer = new offerModel(req.body);
     try {
         await offer.save();

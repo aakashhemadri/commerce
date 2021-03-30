@@ -21,7 +21,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.post('/cart', async (req, res) => {
+router.post('/', async (req, res) => {
     const cart = new cartModel(req.body);
     try {
         await cart.save();

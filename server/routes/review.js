@@ -21,7 +21,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.post('/review', async (req, res) => {
+router.post('/', async (req, res) => {
     const review = new reviewModel(req.body);
     try {
         await review.save();
