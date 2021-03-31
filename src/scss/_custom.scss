@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+.page-container {
+    display: grid;
+    // grid-template-rows: auto 1fr auto;
+}
+
+.product {
+    margin: auto;
+    padding: 1rem;
+    width: 100%;
+
+    background-color: #f1f1f1;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .product-image {
+        max-width: 400px;
+        border-radius: 10px;        
+    }
+
+    .product-body {
+        padding: 1rem;
+
+        .product-title {
+            font-size: 15pt;
+            color: $primary;
+        }
+
+        .product-price {
+            color: $secondary;
+        }
+
+        .product-description {
+
+        }
+    }
+}
+
+@media (max-width: 740px) {
+
+    .product {
+        display: flex;
+        flex-flow: column wrap;
+    }
+}

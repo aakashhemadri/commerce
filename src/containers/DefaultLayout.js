@@ -21,18 +21,18 @@ class App extends Component {
 
     render() {
         return (
-            <React.Fragment>
+            <div class='page-container'>
                 <DefaultNavbar />
-                    <Router>
-                        <Switch>
-                            <Route path={config.BASE_PATH + "/home"} component={(props) => <HomeView {...props} />} />
-                            <Route path={config.BASE_PATH + "/product"} component={(props) => <ProductView {...props} />} />
-                            <Route path={config.BASE_PATH + "/cart"} component={(props) => <CartView {...props} />} />
-                            <Route path={config.BASE_PATH + "/login"} component={(props) => <LoginView {...props} />} />
-                            <Route component={(props) => <HomeView {...props} />} />
-                        </Switch>
-                    </Router>
-            </React.Fragment>
+                <Router>
+                    <Switch>
+                        <Route path={config.BASE_PATH + "/home"} component={(props) => <HomeView {...props} />} />
+                        <Route path={config.BASE_PATH + "/product"} component={(props) => <ProductView {...props} />} />
+                        <Route path={config.BASE_PATH + "/cart"} component={(props) => <CartView {...props} />} />
+                        <Route path={config.BASE_PATH + "/login"} component={(props) => <LoginView {...props} />} />
+                        <Route component={(props) => <HomeView {...props} />} />
+                    </Switch>
+                </Router>
+            </div>
         );
     }
 }

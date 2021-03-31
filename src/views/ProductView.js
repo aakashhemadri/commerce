@@ -11,21 +11,27 @@ class ProductPage extends React.Component {
 
   render() {
     return (
-      <div>
-        <img src={this.state.item.imageURL} />
-        <div>
-          Product Description :
+      <div class='product'>
+        <img src={this.state.item.imageURL} class='product-image' />
+        <div class='product-body'>
+          <div class='product-title'>
+            {this.state.item.name}
+          </div>
+          <div class='product-price'>
+            Rs. {this.state.item.price}
+          </div>
+          <div class='product-description'>
             {this.state.item.description}
+          </div>
         </div>
+        <div class='product-information'>
 
-        <div>
-          Product Details :
-          <div>
-            Name : {this.state.item.name}
-          </div>
-          <div>
-            Price : {this.state.item.price}
-          </div>
+        </div>
+        <div class='product-reviews'>
+
+        </div>
+        <div class='product-recommendations'>
+
         </div>
       </div>
     );
