@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
-
 import {
   Collapse,
   Navbar,
@@ -9,12 +7,11 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
   NavbarText
 } from 'reactstrap';
+
+import config from '../config'
+
 
 const NavBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,10 +26,10 @@ const NavBar = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/commerce/account">Account</NavLink>
+              <NavLink href={config.BASE_PATH + '/account'}>Account</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/commerce/cart">Cart</NavLink>
+              <NavLink href={config.BASE_PATH + '/cart'}>Cart</NavLink>
             </NavItem>
           </Nav>
           <NavbarText>Username</NavbarText>
