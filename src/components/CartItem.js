@@ -6,6 +6,7 @@ import {
   Row, Col
 } from 'reactstrap';
 import axios from 'axios';
+import config from '../config.js';
 
 
 class CartItem extends React.Component {
