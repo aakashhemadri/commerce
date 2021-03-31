@@ -21,7 +21,7 @@ class App extends Component {
 
     render() {
         return (
-            <div class='page-container'>
+            <React.Fragment>
                 <DefaultNavbar />
                 <Router>
                     <Switch>
@@ -31,8 +31,8 @@ class App extends Component {
                         <Route path={config.BASE_PATH + "/login"} component={(props) => <LoginView {...props} />} />
                         <Route component={(props) => <HomeView {...props} />} />
                     </Switch>
-                </Router>
-            </div>
+                </Router >
+            </React.Fragment>
         );
     }
 }
