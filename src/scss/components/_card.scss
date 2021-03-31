@@ -3,7 +3,7 @@
     flex-direction: column;
     position: relative;
     margin-bottom: 10px;
-    height: 300px;
+    height: 350px;
     background-color: var(--background-color);
     border-radius: 10px;
     border: 1px solid var(--secondary-border-color);
@@ -24,7 +24,7 @@
   
     @include respond-to('medium') {
       width: calc((100% / 2) - 20px);
-      height: 320px;
+      height: 370px;
       margin-left: 10px;
       margin-right: 10px;
       margin-bottom: 20px;

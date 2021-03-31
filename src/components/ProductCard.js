@@ -35,7 +35,10 @@ class ProductCard extends React.Component {
             <title class='.m-card__title'>{this.props.item.name}</title>
           </Link>
           <div class="m-card__tag">{'Rs.' + this.props.item.price}</div>
-          <div class='m-button primary' onClick={() => this.addToCart(this.props)} >Add to Cart</div>
+          <div class="m-card__name">
+            <div class='m-button primary' onClick={() => this.addToCart(this.props)} >Buy Now</div>
+            <div class='m-button filled' onClick={() => this.addToCart(this.props)} >Add to Cart</div>
+          </div>
         </div>
       </article>
     );
