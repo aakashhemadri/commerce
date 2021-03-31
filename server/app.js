@@ -13,6 +13,7 @@ const reviewRoutes = require('./routes/review')
 const userRoutes = require('./routes/user')
 const cartRoutes = require('./routes/cart')
 
+const BASE_PATH = '/commerce/api';
 const app = express();
 
 // uncomment after placing your favicon in /public
@@ -36,13 +37,13 @@ mongoose.connect(
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.use('/api', index);
-app.use('/api/product', productRoutes);
-app.use('/api/offer', offerRoutes);
-app.use('/api/review', reviewRoutes);
-app.use('/api/seller', sellerRoutes);
-app.use('/api/user', userRoutes);
-app.use('/api/cart', cartRoutes);
+app.use(BASE_PATH, index);
+app.use(BASE_PATH +'/product', productRoutes);
+app.use(BASE_PATH +'/offer', offerRoutes);
+app.use(BASE_PATH +'/review', reviewRoutes);
+app.use(BASE_PATH +'/seller', sellerRoutes);
+app.use(BASE_PATH +'/user', userRoutes);
+app.use(BASE_PATH +'/cart', cartRoutes);
 
 app.get('*', (req, res) => {
   res.sendFile('build/index.html', { root: global });
