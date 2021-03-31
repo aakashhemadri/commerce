@@ -5,6 +5,7 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
+import config from '../config.js';
 
 const DefaultNavbar = React.lazy(() => import('./DefaultNavbar.js'));
 
@@ -24,10 +25,10 @@ class App extends Component {
                 <DefaultNavbar />
                     <Router>
                         <Switch>
-                            <Route path="/commerce/product-list" component={(props) => <HomeView {...props} />} />
-                            <Route path="/commerce/product" component={(props) => <ProductView {...props} />} />
-                            <Route path="/commerce/cart" component={(props) => <CartView {...props} />} />
-                            <Route path="/commerce/login" component={(props) => <LoginView {...props} />} />
+                            <Route path={config.BASE_PATH + "/home"} component={(props) => <HomeView {...props} />} />
+                            <Route path={config.BASE_PATH + "/product"} component={(props) => <ProductView {...props} />} />
+                            <Route path={config.BASE_PATH + "/cart"} component={(props) => <CartView {...props} />} />
+                            <Route path={config.BASE_PATH + "/login"} component={(props) => <LoginView {...props} />} />
                             <Route component={(props) => <HomeView {...props} />} />
                         </Switch>
                     </Router>

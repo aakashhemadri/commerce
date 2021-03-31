@@ -1,8 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import {
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button,
+  Card, CardImg,
+  CardTitle,
   Row, Col
 } from 'reactstrap';
 import axios from 'axios';

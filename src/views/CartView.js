@@ -1,11 +1,11 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 
-import NavBar from '../containers/DefaultNavbar.js';
+import config from '../config';
 import CartItem from '../components/CartItem.js';
 
 import axios from 'axios';
-import { CardGroup, CardColumns, Row, Col, Container } from 'reactstrap';
+import { Container } from 'reactstrap';
 
 class CartPage extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class CartPage extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/api/cart/list')
+    axios.get(config.BASE_PROXY + '/cart/list')
       .then((res) => {
         this.setState({
           cartItemsList: res.data

@@ -1,5 +1,4 @@
 import React from 'react';
-import NavBar from '../containers/DefaultNavbar.js';
 
 class ProductPage extends React.Component {
   constructor(props) {

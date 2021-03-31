@@ -5,6 +5,7 @@ import {
 
 import ProductCard from '../components/ProductCard.js';
 import axios from 'axios';
+import config from '../config';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/api/product/list')
+    axios.get(config.BASE_PROXY + '/product/list')
       .then((res) => {
         this.setState({
           productList: res.data
