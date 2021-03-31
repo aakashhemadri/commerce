@@ -28,7 +28,7 @@ class HomePage extends React.Component {
 
   componentDidMount() {
     console.log(config.BASE_PROXY, config.PROXY_URL);
-    axios.get(config.PROXY_URL + config.BASE_PROXY +'/product/list')
+    axios.get(config.PROXY_URL + config.BASE_PROXY + '/product/list')
       .then((res) => {
         this.setState({
           productList: res.data
@@ -41,21 +41,18 @@ class HomePage extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
-        <div className="App" >
-          <Row sm="4">
-            {this.productCards(this.state.productList)}
-          </Row>
+      <div class='l-wrapper'>
+        <div class="l-grid centered">
+          {this.productCards(this.state.productList)}
         </div>
-      </React.Fragment>
-
+      </div>
     );
   }
 
   productCards(items, index) {
     return (
       <React.Fragment>
-        {items.map((item) => <ProductCard item={item}/>)}
+        {items.map((item) => <ProductCard item={item} />)}
       </React.Fragment>
     )
   }
