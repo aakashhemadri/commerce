@@ -9,6 +9,7 @@ import axios from 'axios';
 import {
   Link,
 } from "react-router-dom";
+import config from '../config';
 
 class ProductCard extends React.Component
 {
@@ -20,14 +21,14 @@ class ProductCard extends React.Component
     return (
       <Card>
         <Link to={{
-          pathname: "/commerce/product",
+          pathname: config.BASE_PATH + "/product",
           state: this.props.item,
         }}>
           <CardImg top width="100%" src={this.props.item.imageURL} alt={this.props.item.name + " Image"} />
         </Link>
         <CardBody>
           <Link to={{
-            pathname: "/commerce/product",
+            pathname: config.BASE_PATH + "/product",
             state: this.props.item,
           }}>
             <CardTitle tag="h5">{this.props.item.name}</CardTitle>
@@ -40,7 +41,7 @@ class ProductCard extends React.Component
   }
 
   addToCart(props) {
-    axios.post('/api/cart/', {
+    axios.post(config.PROXY_URL +  config.BASE_PROXY +  '/cart', {
         products: {
           "product": this.props.item._id,
           "quantity": 1

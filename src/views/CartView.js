@@ -17,7 +17,7 @@ class CartPage extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(config.BASE_PROXY + '/cart/list')
+    axios.get(config.PROXY_URL +  config.BASE_PROXY + '/cart/list')
       .then((res) => {
         this.setState({
           cartItemsList: res.data

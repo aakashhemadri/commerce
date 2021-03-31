@@ -27,7 +27,7 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(config.BASE_PROXY + '/product/list')
+    axios.get(config.PROXY_URL +  config.BASE_PROXY + '/product/list')
       .then((res) => {
         this.setState({
           productList: res.data

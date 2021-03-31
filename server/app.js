@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
@@ -23,6 +24,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'build')));
+app.use(cors());
 
 mongoose.connect(
     "mongodb+srv://" + process.env.MONGO_USER + ":" + process.env.MONGO_PASSWD +"@cluster0.r0co7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",

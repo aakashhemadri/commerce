@@ -14,14 +14,14 @@ class CartItem extends React.Component {
     this.state = {
       product: {
         imageURL: "",
-        name: "Loading",
+        name: "",
         price: ""
       }
     }
   }
 
   componentDidMount() {
-    axios.get('/api/product/' + this.props.item.products[0].product)
+    axios.get(config.PROXY_URL +  config.BASE_PROXY + '/product/' + this.props.item.products[0].product)
       .then((res) => {
         this.setState({
           product: res.data
