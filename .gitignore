@@ -1,5 +1,7 @@
 build
 target
+.env.development
+.env.production
 
 ### Linux ###
 *~

@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
@@ -14,8 +14,10 @@ const reviewRoutes = require('./routes/review')
 const userRoutes = require('./routes/user')
 const cartRoutes = require('./routes/cart')
 
-const BASE_PATH = '/commerce/api';
+const BASE_PATH = process.env.REACT_APP_BASE_PROXY;
+
 const app = express();
+app.use(cors());
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -24,7 +26,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'build')));
-app.use(cors());
 
 mongoose.connect(
     "mongodb+srv://" + process.env.MONGO_USER + ":" + process.env.MONGO_PASSWD +"@cluster0.r0co7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",

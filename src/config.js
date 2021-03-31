@@ -1,9 +1,9 @@
 let config = {
-    PROXY_URL: 'http://34.68.249.25:3001',
-    BASE_PATH: '/commerce',
-    BASE_PROXY: '/commerce/api',
-    APP_NAME: 'Wallmart',
-    APP_DESCRIPTION: "Future of Retail Hackathon",
+    PROXY_URL: process.env.REACT_APP_PROXY_URL,
+    BASE_PATH: process.env.REACT_APP_BASE_PATH,
+    BASE_PROXY: process.env.REACT_APP_BASE_PROXY,
+    APP_NAME: process.env.REACT_APP_NAME,
+    APP_DESCRIPTION: process.env.REACT_APP_DESCRIPTION,
 }
 
 export default config;
