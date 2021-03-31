@@ -171,6 +171,9 @@ dist/
 tmp/
 temp/
 
+# vim swap files
+*.swp
+
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
