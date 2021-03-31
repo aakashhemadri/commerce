@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import {
   Card, CardImg,
-  CardTitle,
+  CardTitle, Button,
   Row, Col
 } from 'reactstrap';
 import axios from 'axios';
@@ -47,11 +47,27 @@ class CartItem extends React.Component {
             Quantity: {this.props.item.products[0].quantity}
           </Col>
           <Col>
-            Price: {this.state.product.price * this.props.item.products[0].quantity}
+            <Row>
+              Price: {this.state.product.price * this.props.item.products[0].quantity}
+            </Row>
+            <Row>
+              <Button onClick={() => {this.removeItem()} } >
+                Remove from cart
+              </Button>
+            </Row>
           </Col>
         </Row>
       </Card>
     );
+  }
+
+  removeItem() {
+    axios.delete(config.PROXY_URL + config.BASE_PROXY + "/cart/" + this.state.product._id).then(
+      function(response) {
+        console.log("Respone:" +response);
+      }
+    );
+    //window.location.reload();
   }
 }
 
