@@ -5,12 +5,10 @@ const Offer = require('./offer');
 const ProductSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true,
         trim: true,
     },
     description: {
         type: String,
-        required: true,
         trim: true,
     },
     category: String,
@@ -24,7 +22,6 @@ const ProductSchema = new mongoose.Schema({
     },
     price: {
         type: Number,
-        required: true,
     },
     reviews: [{
         type: mongoose.Schema.Types.ObjectId,
